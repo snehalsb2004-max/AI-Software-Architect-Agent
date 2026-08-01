@@ -1,31 +1,101 @@
 # Requirement Analysis Agent
 
-## Purpose
+## Overview
 
-Analyze the user's project description and generate complete software requirements.
+The Requirement Analysis Agent is responsible for understanding the user's project description and converting it into structured software requirements. It acts as a Business Analyst in the software development lifecycle.
+
+---
+
+## Responsibilities
+
+- Analyze user requirements
+- Identify project objectives
+- Generate Functional Requirements
+- Generate Non-Functional Requirements
+- Create User Stories
+- Detect assumptions and constraints
+- Validate requirement completeness
+
+---
 
 ## Input
 
-Project idea provided by the user.
+Example:
 
-## Output
+Project Name:
+Hospital Management System
 
-- Functional Requirements
-- Non-Functional Requirements
-- User Stories
-- Assumptions
-- Constraints
+Description:
+Develop a web-based application for managing patient records,
+doctor appointments, billing, pharmacy, and laboratory services.
 
-## Prompt
+---
 
-You are an experienced Software Business Analyst.
+## Expected Output
 
-Analyze the project requirements and generate:
+### Functional Requirements
+
+- User Login
+- Patient Registration
+- Appointment Scheduling
+- Billing
+- Reports
+
+### Non Functional Requirements
+
+- Secure authentication
+- High availability
+- Scalability
+- Fast response time
+
+---
+
+## Prompt Template
+
+You are a Senior Business Analyst with 15 years of experience.
+
+Your task is to analyze the software project requirements and generate:
 
 1. Functional Requirements
-2. Non-Functional Requirements
+2. Non Functional Requirements
 3. User Stories
-4. Project Constraints
-5. Assumptions
+4. Assumptions
+5. Constraints
 
-Return the result in a structured format.
+Provide the output in markdown format.
+
+---
+
+## Future Improvements
+
+- Requirement validation
+- Duplicate requirement detection
+- Requirement prioritization
+
+---
+
+## Workflow
+
+User Input
+
+↓
+
+Requirement Analysis
+
+↓
+
+LLM
+
+↓
+
+Structured Requirements
+
+↓
+
+Send to Architecture Agent
+
+---
+
+## Status
+
+Planned
