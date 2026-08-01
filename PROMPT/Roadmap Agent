@@ -1,1 +1,16 @@
+# Development Roadmap Agent
 
+## Purpose
+
+Generate a development roadmap.
+
+## Output
+
+- Weekly plan
+- Milestones
+- Timeline
+- Deliverables
+
+## Prompt
+
+Generate a complete software development roadmap from planning to deployment.
