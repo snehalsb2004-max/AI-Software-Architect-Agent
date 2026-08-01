@@ -1,8 +1,6 @@
 # Architecture Agent
 
-## Version
 
-**1.0**
 
 ---
 
