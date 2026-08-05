@@ -1850,4 +1850,398 @@ This class design offers several advantages:
 - Simplified future enhancements
 
 ---
+# Design Patterns
 
+The AI Software Architect Agent follows several well-established software design patterns to ensure that the application remains scalable, maintainable, and easy to extend.
+
+---
+
+## MVC (Model-View-Controller)
+
+The application follows the MVC architecture provided by Spring Boot.
+
+```
+User
+
+↓
+
+React Frontend (View)
+
+↓
+
+Controller
+
+↓
+
+Service
+
+↓
+
+Repository
+
+↓
+
+MySQL Database (Model)
+```
+
+### Benefits
+
+- Separation of concerns
+- Better maintainability
+- Easy testing
+- Independent frontend and backend development
+
+---
+
+## Repository Pattern
+
+The Repository Pattern abstracts database operations from the business logic.
+
+Example Repositories:
+
+- UserRepository
+- ProjectRepository
+- ArchitectureRepository
+- ReportRepository
+
+### Advantages
+
+- Cleaner code
+- Simplified CRUD operations
+- Database independence
+- Easy integration with Spring Data JPA
+
+---
+
+## Dependency Injection
+
+Spring Boot automatically injects dependencies using the `@Autowired` annotation or constructor injection.
+
+Example:
+
+```
+ProjectController
+        │
+        ▼
+ProjectService
+        │
+        ▼
+ProjectRepository
+```
+
+### Benefits
+
+- Loose coupling
+- Easier unit testing
+- Improved modularity
+- Better code readability
+
+---
+
+## Factory Pattern
+
+The AI Agent Factory can be used to create different AI agents based on the requested task.
+
+Example:
+
+```
+AIAgentFactory
+
+↓
+
+RequirementAnalysisAgent
+
+ArchitectureAgent
+
+DatabaseAgent
+
+APIAgent
+
+SecurityAgent
+
+DocumentationAgent
+
+RoadmapAgent
+```
+
+### Benefits
+
+- Centralized object creation
+- Easy addition of new AI agents
+- Reduced code duplication
+
+---
+
+## Strategy Pattern
+
+Different AI models or architecture generation strategies can be selected dynamically.
+
+Examples:
+
+- GPT Strategy
+- Gemini Strategy
+- Local LLM Strategy
+
+This makes the application flexible and future-ready.
+
+---
+
+# Exception Handling
+
+A centralized exception handling mechanism improves application stability.
+
+## Custom Exceptions
+
+The project may include the following custom exceptions:
+
+- UserNotFoundException
+- ProjectNotFoundException
+- InvalidRequirementException
+- AIServiceUnavailableException
+- InvalidPromptException
+- DatabaseConnectionException
+- UnauthorizedAccessException
+
+---
+
+## Global Exception Handler
+
+A global exception handler ensures consistent error responses.
+
+Responsibilities:
+
+- Capture application exceptions
+- Return meaningful HTTP status codes
+- Log errors
+- Provide user-friendly messages
+
+---
+
+# Logging Architecture
+
+Logging is essential for debugging and monitoring.
+
+Recommended logging levels:
+
+| Level | Purpose |
+|--------|---------|
+| INFO | Normal application events |
+| DEBUG | Development and debugging |
+| WARN | Potential issues |
+| ERROR | Application failures |
+
+Logs should include:
+
+- User login
+- Project creation
+- AI requests
+- Database operations
+- API responses
+- Error details
+
+---
+
+# Security Considerations
+
+The class design incorporates security best practices.
+
+### Authentication
+
+- JWT-based authentication
+- Secure password hashing
+- Session validation
+
+### Authorization
+
+- Role-Based Access Control (RBAC)
+- Protected REST endpoints
+- Permission validation
+
+### Data Protection
+
+- Password encryption
+- HTTPS communication
+- Input validation
+- SQL injection prevention
+
+---
+
+# Testing Strategy
+
+The project should include multiple levels of testing.
+
+## Unit Testing
+
+Framework:
+
+- JUnit 5
+
+Targets:
+
+- Service classes
+- Utility classes
+- Validation logic
+
+---
+
+## Integration Testing
+
+Framework:
+
+- Spring Boot Test
+
+Targets:
+
+- REST APIs
+- Database interaction
+- AI service integration
+
+---
+
+## API Testing
+
+Tools:
+
+- Postman
+- Swagger UI
+
+Verify:
+
+- Endpoints
+- Request validation
+- Response formats
+- Authentication
+
+---
+
+## Performance Testing
+
+Recommended tools:
+
+- JMeter
+- Gatling
+
+Metrics:
+
+- Response time
+- Throughput
+- Concurrent users
+- System stability
+
+---
+
+# Coding Standards
+
+The project follows standard Java coding practices.
+
+### Naming Standards
+
+- Classes → PascalCase
+- Methods → camelCase
+- Variables → camelCase
+- Constants → UPPER_CASE
+- Packages → lowercase
+
+---
+
+### Documentation
+
+Every public class and method should include JavaDoc comments.
+
+Example:
+
+```
+/**
+ * Generates software architecture based on project requirements.
+ *
+ * @param request User project details
+ * @return Generated architecture
+ */
+```
+
+---
+
+# Best Practices
+
+The following practices are recommended throughout development.
+
+- Keep classes focused on a single responsibility.
+- Avoid duplicate code.
+- Use interfaces where appropriate.
+- Validate all user inputs.
+- Handle exceptions gracefully.
+- Write unit tests for business logic.
+- Keep methods small and readable.
+- Use dependency injection instead of manual object creation.
+- Follow REST API standards.
+- Maintain consistent code formatting.
+
+---
+
+# Future Enhancements
+
+The class design can be extended with additional features.
+
+### AI Enhancements
+
+- Multi-agent collaboration
+- Automatic UML generation
+- AI-powered code generation
+- Intelligent architecture optimization
+
+### Technical Enhancements
+
+- Microservices architecture
+- Docker containerization
+- Kubernetes deployment
+- Redis caching
+- Elasticsearch integration
+- Message queues (RabbitMQ/Kafka)
+
+### User Features
+
+- Team collaboration
+- Project versioning
+- Cloud storage
+- Real-time notifications
+- Dark mode
+- Multi-language support
+
+---
+
+# References
+
+1. OMG Unified Modeling Language (UML) Specification
+2. Spring Boot Official Documentation
+3. Spring Data JPA Documentation
+4. Oracle Java Documentation
+5. Robert C. Martin – Clean Architecture
+6. Joshua Bloch – Effective Java
+7. Martin Fowler – Patterns of Enterprise Application Architecture
+
+---
+
+# Glossary
+
+| Term | Description |
+|------|-------------|
+| Entity | Persistent business object stored in the database |
+| DTO | Data Transfer Object |
+| Repository | Data access layer |
+| Service | Business logic layer |
+| Controller | Handles HTTP requests |
+| Dependency Injection | Automatic object creation and management |
+| JWT | JSON Web Token |
+| REST API | Web service using HTTP methods |
+| MVC | Model-View-Controller architecture |
+| UML | Unified Modeling Language |
+
+---
+
+# Conclusion
+
+The Class Diagram provides a complete representation of the static structure of the AI Software Architect Agent. It defines the responsibilities of each class, establishes relationships between different components, and ensures that the application follows object-oriented design principles and enterprise development practices.
+
+By using layered architecture, design patterns, dependency injection, and modular components, the system becomes easier to understand, maintain, test, and extend. The Class Diagram serves as a foundation for implementation and acts as a reference throughout the software development lifecycle.
+
+---
