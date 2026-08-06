@@ -1506,3 +1506,430 @@ The enterprise architecture provides:
 - Easy integration with cloud platforms
 
 ---
+# 5. Quality Attributes and Architectural Decisions
+
+## Overview
+
+A successful software architecture is not only defined by its functionality but also by its quality attributes. These attributes determine how well the system performs under different conditions and how easily it can be maintained, secured, and scaled.
+
+The AI Software Architect Agent has been designed with these quality attributes in mind.
+
+---
+
+# Quality Attributes
+
+## Performance
+
+Performance measures how quickly the application responds to user requests.
+
+### Strategies Used
+
+- RESTful APIs
+- Efficient SQL Queries
+- Spring Boot Caching
+- Lazy Loading (React)
+- Connection Pooling
+- Asynchronous AI Requests
+
+### Expected Performance
+
+| Operation | Expected Time |
+|------------|---------------|
+| User Login | < 2 seconds |
+| Project Creation | < 3 seconds |
+| AI Requirement Analysis | 5–15 seconds |
+| Database Schema Generation | 3–8 seconds |
+| API Generation | 4–10 seconds |
+| Documentation Export | < 5 seconds |
+
+---
+
+# Scalability
+
+The system supports future growth without major architectural changes.
+
+### Horizontal Scaling
+
+- Multiple backend servers
+- Load Balancer
+- Kubernetes Pods
+
+### Vertical Scaling
+
+- Increase CPU
+- Increase RAM
+- Increase Storage
+
+### Benefits
+
+- Supports more users
+- Better performance
+- Reduced downtime
+
+---
+
+# Availability
+
+The application should remain operational even if some components fail.
+
+Techniques include:
+
+- Health checks
+- Automatic restart
+- Database backup
+- Monitoring
+- Cloud deployment
+- Multiple application instances
+
+---
+
+# Reliability
+
+Reliability ensures that the application performs its intended functions consistently.
+
+Strategies:
+
+- Exception handling
+- Database transactions
+- Retry mechanisms
+- API validation
+- Logging
+
+---
+
+# Security
+
+The system follows the principle of "Security by Design."
+
+Security measures include:
+
+- HTTPS
+- JWT Authentication
+- Spring Security
+- Password Encryption (BCrypt)
+- Role-Based Access Control (RBAC)
+- Input Validation
+- SQL Injection Prevention
+- Environment Variables
+- API Rate Limiting
+
+---
+
+# Maintainability
+
+The architecture is easy to maintain because it uses:
+
+- Layered Architecture
+- MVC Pattern
+- Dependency Injection
+- Modular AI Agents
+- Clear Package Structure
+- Standard Coding Practices
+
+---
+
+# Testability
+
+The system is designed for effective testing.
+
+### Unit Testing
+
+Tools:
+
+- JUnit 5
+- Mockito
+
+### Integration Testing
+
+Tools:
+
+- Spring Boot Test
+- TestContainers
+
+### API Testing
+
+Tools:
+
+- Postman
+- Swagger UI
+
+---
+
+# Architectural Decision Records (ADR)
+
+## ADR-001
+
+### Decision
+
+Use Spring Boot as the backend framework.
+
+### Reason
+
+- Enterprise standard
+- Large community
+- Excellent security support
+- REST API development
+- Easy database integration
+
+---
+
+## ADR-002
+
+### Decision
+
+Use React.js for the frontend.
+
+### Reason
+
+- Component-based development
+- Fast rendering
+- Rich ecosystem
+- Easy integration with REST APIs
+
+---
+
+## ADR-003
+
+### Decision
+
+Use MySQL as the database.
+
+### Reason
+
+- Open source
+- Reliable
+- ACID compliance
+- Excellent support for relational data
+
+---
+
+## ADR-004
+
+### Decision
+
+Use Spring AI with OpenAI/Gemini.
+
+### Reason
+
+- Simplifies AI integration
+- Flexible model support
+- Easy prompt management
+
+---
+
+## ADR-005
+
+### Decision
+
+Use Docker for deployment.
+
+### Reason
+
+- Consistent environments
+- Easy deployment
+- Better portability
+- Supports cloud hosting
+
+---
+
+# Risk Analysis
+
+| Risk | Impact | Mitigation |
+|------|--------|------------|
+| AI API unavailable | High | Retry and fallback mechanism |
+| Database failure | High | Automated backups and recovery |
+| Network interruption | Medium | Retry requests |
+| Invalid user input | Medium | Input validation |
+| High traffic | Medium | Horizontal scaling |
+| Security attacks | High | Spring Security + JWT + HTTPS |
+
+---
+
+# Future Enhancements
+
+The following enhancements are planned for future versions.
+
+## AI Enhancements
+
+- Multi-model AI support
+- Local LLM integration
+- AI memory
+- Better prompt optimization
+- AI feedback learning
+
+---
+
+## Collaboration Features
+
+- Team workspaces
+- Real-time collaboration
+- Project sharing
+- Comments
+- Version history
+
+---
+
+## Cloud Features
+
+- AWS Deployment
+- Azure Deployment
+- Kubernetes
+- Auto Scaling
+- Multi-region deployment
+
+---
+
+## Analytics
+
+- Dashboard
+- AI Usage Statistics
+- Project Analytics
+- Performance Reports
+
+---
+
+# Best Practices
+
+The project follows modern software engineering best practices.
+
+- Clean Code
+- SOLID Principles
+- DRY Principle
+- KISS Principle
+- Version Control using Git
+- Continuous Integration
+- Documentation First
+- Modular Design
+- Secure Coding
+- Code Reviews
+
+---
+
+# Complete System Architecture Diagram
+
+```mermaid
+graph TD
+
+A[User]
+
+B[React Frontend]
+
+C[Spring Boot Backend]
+
+D[Authentication Module]
+
+E[Project Module]
+
+F[Requirement Agent]
+
+G[Architecture Agent]
+
+H[Database Agent]
+
+I[API Agent]
+
+J[Documentation Agent]
+
+K[Security Agent]
+
+L[Roadmap Agent]
+
+M[(MySQL Database)]
+
+N[OpenAI / Gemini]
+
+A --> B
+
+B --> C
+
+C --> D
+
+C --> E
+
+E --> F
+
+F --> G
+
+G --> H
+
+H --> I
+
+I --> J
+
+J --> K
+
+K --> L
+
+F --> N
+
+G --> N
+
+H --> N
+
+I --> N
+
+J --> N
+
+K --> N
+
+L --> N
+
+C --> M
+```
+
+---
+
+# Project Workflow Summary
+
+1. User creates a project.
+2. Requirements are submitted.
+3. Requirement Agent analyzes input.
+4. Architecture Agent designs the solution.
+5. Database Agent creates schema.
+6. API Agent generates REST APIs.
+7. Documentation Agent prepares reports.
+8. Security Agent reviews security recommendations.
+9. Roadmap Agent generates the project timeline.
+10. Results are stored in MySQL.
+11. User downloads generated artifacts.
+
+---
+
+# References
+
+1. Spring Boot Official Documentation
+2. Spring AI Documentation
+3. React Official Documentation
+4. MySQL 8 Reference Manual
+5. Docker Documentation
+6. Kubernetes Documentation
+7. OpenAI API Documentation
+8. Google Gemini API Documentation
+9. UML 2.5 Specification (OMG)
+10. Clean Architecture – Robert C. Martin
+
+---
+
+# Glossary
+
+| Term | Meaning |
+|------|---------|
+| AI Agent | A specialized software component responsible for a specific task |
+| REST API | Representational State Transfer Application Programming Interface |
+| JWT | JSON Web Token used for authentication |
+| MVC | Model-View-Controller design pattern |
+| ORM | Object Relational Mapping |
+| JPA | Java Persistence API |
+| UML | Unified Modeling Language |
+| CI/CD | Continuous Integration / Continuous Deployment |
+| ADR | Architectural Decision Record |
+
+---
+
+# Conclusion
+
+The System Architecture of the AI Software Architect Agent provides a comprehensive blueprint for developing an intelligent software design platform. The architecture separates the application into distinct layers, promotes modularity through specialized AI agents, and integrates modern technologies such as Spring Boot, React.js, MySQL, and Spring AI.
+
+By incorporating security, scalability, maintainability, and quality attributes into the design, the system is prepared for both academic demonstration and future real-world enhancements. The documented architecture also serves as a reference for developers, reviewers, and future contributors, ensuring consistency throughout the software development lifecycle.
+
+---
