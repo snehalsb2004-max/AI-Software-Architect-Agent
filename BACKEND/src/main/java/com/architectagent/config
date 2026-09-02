@@ -1,1 +1,41 @@
+#AIConfig.java
+package com.architectagent.config;
 
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AIConfig {
+
+    /*
+     * Central configuration for AI/LLM integration.
+     *
+     * API credentials and model configuration should
+     * be supplied using environment variables.
+     */
+}
+
+#WebConfig.java
+package com.architectagent.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+
+        registry.addMapping("/api/**")
+                .allowedOrigins("http://localhost:3000")
+                .allowedMethods(
+                        "GET",
+                        "POST",
+                        "PUT",
+                        "DELETE",
+                        "OPTIONS"
+                )
+                .allowedHeaders("*");
+    }
+}
